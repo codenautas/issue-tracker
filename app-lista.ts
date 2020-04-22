@@ -2,19 +2,23 @@
 
 // import {ProceduresLista} from "./procedures-lista";
 
-import {AppBackend, Request} from "backend-plus"
+import {AppBackend, Request, OptsClientPage} from "backend-plus"
 import { productos } from "./table-productos";
+import { defConfig } from "./def-config";
 
-export class AppLista extends AppBackend{
-
+export type Constructor<T> = new(...args: any[]) => T;
+export function emergeAppLista<T extends Constructor<AppBackend>>(Base:T){
+  return class Appdefgen extends Base{
+    constructor(...args:any[]){ 
+        super(args); 
+    }
 
     configStaticConfig(){
         super.configStaticConfig();
         this.setStaticConfig(defConfig);
     }
     
-    clientIncludes(req:Request, hideBEPlusInclusions:boolean){
-        var be = this;
+    clientIncludes(req:Request, hideBEPlusInclusions?:OptsClientPage){
         return super.clientIncludes(req, hideBEPlusInclusions).concat([
             {type:'js' , src:'client/client.js' },
         ])
@@ -27,7 +31,6 @@ export class AppLista extends AppBackend{
         return menu;
     }
     prepareGetTables(){
-        var be=this;
         super.prepareGetTables();
         this.getTableDefinition={
             ...this.getTableDefinition
@@ -35,3 +38,4 @@ export class AppLista extends AppBackend{
         }
     }
   }
+}

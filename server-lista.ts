@@ -1,3 +1,6 @@
-import { AppLista } from "./app-lista";
+import { AppBackend } from "backend-plus";
+import { emergeAppLista } from "./app-lista";
 
-new AppLista().start();
+var Appdefgen = emergeAppLista(AppBackend);
+
+new Appdefgen().start();
