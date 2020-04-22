@@ -1,0 +1,22 @@
+{
+  "name": "lista",
+  "version": "1.0.0",
+  "description": "App para llevar un orden en la compra de objetos en supermercados",
+  "main": "server-lista.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backend-plus": "~0.31.24"
+  },
+  "devDependencies": {
+    "@types/mocha": "~7.0.2",
+    "@types/yazl": "~2.4.2",
+    "discrepances": "~0.2.4",
+    "pg-triggers": "~0.2.3",
+    "types.d.ts": "~0.4.15",
+    "mixin-patch": "~0.3.3"
+  }
+}
