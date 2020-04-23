@@ -1,0 +1,8 @@
+db:
+  database: itracker_db
+  user: itracker_admin
+  password: 39399128dasjerqwe.i3iqwe.!
+install:
+  dump:
+    db:
+      owner: itracker_owner
