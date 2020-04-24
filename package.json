@@ -5,7 +5,9 @@
   "main": "server-lista.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server-lista.js"
+    "start": "node dist/server-lista.js",
+    "dump": "npm start -- --dump-db",
+    "buildw": "tsc --watch"
   },
   "author": "",
   "license": "ISC",
