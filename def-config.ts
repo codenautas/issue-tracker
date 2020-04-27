@@ -46,6 +46,12 @@ install:
       - estados_permisos_trg.sql
       - proximo_estado_posible.sql
 login:
+  table: usuarios
+  userFieldName: usuario
+  passFieldName: md5clave
+  rolFieldName: rol
+  infoFieldList: [usuario, rol]
+  activeClausule: activo
   plus:
     maxAge-5-sec: 5000    
     maxAge: 864000000
