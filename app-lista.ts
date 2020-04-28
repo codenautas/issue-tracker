@@ -6,6 +6,7 @@ import {AppBackend, Request, OptsClientPage} from "backend-plus"
 import { productos } from "./table-productos";
 import { defConfig } from "./def-config";
 import { usuarios } from "./table-usuarios";
+import { mandados } from "./table-mandados";
 
 export type Constructor<T> = new(...args: any[]) => T;
 export function emergeAppLista<T extends Constructor<AppBackend>>(Base:T){
@@ -28,16 +29,19 @@ export function emergeAppLista<T extends Constructor<AppBackend>>(Base:T){
     getMenu(){
         let menu = {menu:[
             {menuType:'table' , name:'productos'},
-            {menuType:'table' , name:'usuarios'}
+            {menuType:'table' , name:'usuarios'},
+            {menuType:'table' , name:'mandados'}
         ]}
         return menu;
     }
+
     prepareGetTables(){
         super.prepareGetTables();
         this.getTableDefinition={
             ...this.getTableDefinition
             , productos 
-            , usuarios         
+            , usuarios  
+            , mandados       
         }
     }
   }
