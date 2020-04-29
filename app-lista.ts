@@ -7,6 +7,7 @@ import { productos } from "./table-productos";
 import { defConfig } from "./def-config";
 import { usuarios } from "./table-usuarios";
 import { mandados } from "./table-mandados";
+import { compras } from "./table-compras";
 
 export type Constructor<T> = new(...args: any[]) => T;
 export function emergeAppLista<T extends Constructor<AppBackend>>(Base:T){
@@ -30,7 +31,8 @@ export function emergeAppLista<T extends Constructor<AppBackend>>(Base:T){
         let menu = {menu:[
             {menuType:'table' , name:'productos'},
             {menuType:'table' , name:'usuarios'},
-            {menuType:'table' , name:'mandados'}
+            {menuType:'table' , name:'mandados'},
+            {menuType:'table' , name:'compras'}
         ]}
         return menu;
     }
@@ -42,6 +44,7 @@ export function emergeAppLista<T extends Constructor<AppBackend>>(Base:T){
             , productos 
             , usuarios  
             , mandados       
+            , compras
         }
     }
   }
