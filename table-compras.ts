@@ -10,8 +10,13 @@ export function compras(context:TableContext):TableDefinition {
         editable: admin,
         fields: [
             { name: "cantidad"     , typeName: "integer"},
-            { name: "producto"     , typeName: "text"},
+            { name: "articulo"     , typeName: "text"},
+            { name: "fecha_mandado"     , typeName: "date"}
         ],
-        primaryKey: ['cantidad'],
+        primaryKey: ['articulo', 'fecha_mandado'],
+        foreignKeys: [
+            {references:'productos', fields:[{source: "articulo", target: "nombre"}]},
+            {references:'mandados', fields:[{source: "fecha_mandado", target: "fecha"}]},
+        ]
     };
 }
